@@ -33,5 +33,17 @@
   - ec2:Describe"(ワイルドカード)
   - NotAction:iam:* (IAMの操作以外を許可する)
   
+- Resource
+  - EC2インスタンス
+  - EBSボリューム
+  - ARN(Amazon Resource Name)
+    - arn:aws:で始まる文字列
+    - arn:aws:service:region:account:resource
+    -> arn:aws:s3:::mybucket
+   
+- Condition
+  - Resourceに対するActionを許可、拒否するかの条件判定
+  - ポリシー変数(条件キー)に対して、演算子を用いて条件を指定
+  
   
  
