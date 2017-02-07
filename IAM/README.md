@@ -14,5 +14,24 @@
  - 脆弱性診断フォームの提出
  ‐ 逆引きDNS申請
  
+**IAMグループ**
 
-
+- IAMユーザをまとめるグループは1AWSアカウントで100グループまで作成可能
+- グループに設定可能な情報
+  - グループ名 / パス(組織) / パーミッション
+  
+- 強度の 強いパスワードポリシーの設定が可能
+  - パスワードの長さ、有効期限、特殊文字の要求など
+ 
+- アクセス条件の記述
+  - Effect / Action(操作) / Resource / Condition(条件)
+- Action
+  - ec2:runInstances
+  - ec2:AttachVolume
+  - s3:CreateBucket
+  - s3:DeleteObject
+  - ec2:Describe"(ワイルドカード)
+  - NotAction:iam:* (IAMの操作以外を許可する)
+  
+  
+ 
