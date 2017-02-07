@@ -102,7 +102,23 @@
 - 各種ログを直接参照する機能
   - API経由でダウンロード or マネジメントコンソールで表示
   
-|DBエンジン| ログ種別 | 保持期間 |
+- PostgreSQL ログ種別無し　保存期：7日間
+- MySQL / MariaDB  ログ種別：Error Slow_Query General  保存期間：24時間
+- Oracle           ログ種別：Alr]ert Trace             保存期間：7日間　
+- SQL_Server       ログ種別：Error Agent Trace         保存期間：7日間
 
- 
-  
+ - ソフトウェアメンテナンス
+   - メンテナンスウィンドウで指定した曜日、時間帯を自動実施
+   - CloudWatch対応(監視)
+     - ホスト層のメトリクス（CPU, Memory Usage）
+     - ストレージ のメトリクス(IOPS, Queue Depth)
+     - NWのメトリクス(受信スループット、送信スループット)
+     - イベント通知機能(RDSで発生した40以上のイベントをSNS経由で通知) 
+   - VPC対応 
+     - VPC内部の任意のサブネットで起動可能
+   - アクセス制御
+     - Security Groupで実現
+   - DBインスタンス暗号化機能
+   　- ディスク 上に暗号化されたデータを保存
+     - AES-256
+     - AWS-KMSで鍵管理が可能
