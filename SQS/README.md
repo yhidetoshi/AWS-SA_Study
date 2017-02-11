@@ -21,5 +21,21 @@
 - メッセージの最大サイズは256KB
  - 画像や動画等の大容量データには適さない
   
+- 時間をおいてからメッセージを見せたい
+ - Delay Queue / Message Timers
+ 
+- 何度受信されてもキューに残り続けるメッセージを何とかしたい
+ - Dead Letter Queue
+ 
+- SQSを使って簡単にスケーラブルなバッチ処理基盤を構築したい
+ - Elastic Beanstalk / Worker Tier
+ 
+- セキュリティ
+ - IAM連携
+ 
+ - モニタリング
+  - CloudWatchでの監視
   
+- スケーラブルなバッチ基盤
+ - Job Observer
   
