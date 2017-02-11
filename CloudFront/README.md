@@ -18,4 +18,15 @@
  - 単一ファイルサイズのキャッシングは最大20GBまで
  - URLパス毎にキャッシュ期間指定が可能
  - フォワードオプション機能による動的ページは新
+
+- サポートするSSL証明書
+ - デフォルト証明書
+  - cloudfront.netドメインのSSL証明書は標準で利用可能
+ - 独自SSL証明書
+  - CloudFrontにて別途SSL証明書の利用課金がされる
+  - AWS Certification Managerで発行された証明書
+ - SNI(Server Name Indication)独自SSL証明書
+  - CloudFrontの独自SSL証明書費用を負担せず、独自ドメインでのSSL通信が可能
+- オリジン暗号化通信
+ - CloudFrontエッジとオリジン間の通信方式を制御可能
  
