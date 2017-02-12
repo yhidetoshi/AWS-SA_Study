@@ -62,3 +62,28 @@
   - AMIの場合
    - AMI選択一覧のRoot Device Typeを確認。Instance storeと表示
    
+- Instance Storeとは
+ - EC2の物理筐体のローカルディスク
+ - インスタンスタイプにより、サイズと、個数、HDD/SSDが予め決まっている
+ - インスタンス停止するとデータは消去される
+ - スナップショット機能はない
+ - 別のEC2に付け替えができない
+ 
+- Instance StoreとアーキテクチャとEphemeral Disk
+ - Instance Storeは各EC2インスタンスと同じ物理ホストに存在
+ - ディスク名をEphemeral Disk(Instance Store Volume)と呼ぶ
+ - 物理ホストに割り当てされているが、利用できるのは特定の１つのEC2インスタンスのみ
+  - 同じ物理ホストの別EC2から共有は不可 
+
+- Instance Storeを共有ディスク構成で利用する場合の制約
+ - 複数のEC2インスタンスから同時に一つのInstance Storeをアタッチできない
+ - 1つのEC2インスタンスから複数のEBSのアタッチは可能
+ - 共有ディスク型のクラスタソフトやOracle RACといったソリューションをそのまま利用できない
+ - Instance Storeは別のEC2に付け替えもできない
+
+- EC2に接続するEphemeral Disk数の変更‘
+ - EC2インスタンスを起動後はInstance Storeの変更はできないため、再度AMIから起動時に選択する必要がある
+ - Instance Storeのサイズは、予めEC2インスタンスによって決まっているためサイズ変更ができない
+  - 例えば、m1.largeでは、420GのEpheral Diskが２つまでと決められている
+   - 2つのディスクをストライプして840GとしてOSから1ドライブで利用する
+   
