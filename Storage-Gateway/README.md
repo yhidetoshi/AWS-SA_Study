@@ -44,4 +44,22 @@
  - キャッシュサイズは16TBまで
  - 現時点はVMware環境上でのみ稼働サポート
  
+- ボリュームゲートウェイ 
+ - Gateway-Stored Volumes
+ - オンプレミス環境のデータディスクデータをAWS Storage Gateway経由でスナップショットとしてs3上に取得し、AWS環境でディザスタリカバリーを実現
+ - 更新データは非同期でAWSに転送
+ - オンプレミス側のStorage Gatewayへリストア、もしくはAWS上でEBSディスクへのリストアも可能
+
+- ボリュームゲートウェイの特徴
+ - 1Gatewayで最大32個のVolume Storageを作成可能
+ - Volume Storage単位でs3↑にEBS Snapshotを取得
+ - Upload Bufferは1GB - 2TBまで
+ 
+- Gateway-Cached Volumes
+ - 1Volumeサイズは1GB-32TiBまで指定可能
+ - 1Gatewayで最大32個、合計1PiBまでVolume Storageを作成可能
+ 
+
+ 
+ 
  
