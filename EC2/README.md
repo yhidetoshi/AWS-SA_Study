@@ -45,3 +45,20 @@
 - Auto Recovery
   - アラーム発砲時に自動的にインスタンス再起動を行う
 - EC2の可用性は99.95%
+
+**ストレージ**
+
+- Amazon Machine Image(AMI)から見たストレージ分類
+ - EBS-Backed-AMI
+  - EC2停止、終了のオプションあり
+  - 停止しても、ファイルシステムは永続する
+ - Instance Store Backed AMI
+  - EC2に停止するオプションはない
+  - EC2を終了するとデータは消える
+  
+- Root DeviceがInstance Storeであるかをの確認方法
+ - EC2の場合
+  - Describe -> Root Device Typeを確認。Instance Storeと表示
+  - AMIの場合
+   - AMI選択一覧のRoot Device Typeを確認。Instance storeと表示
+   
