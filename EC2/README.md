@@ -84,6 +84,13 @@
 - EC2に接続するEphemeral Disk数の変更‘
  - EC2インスタンスを起動後はInstance Storeの変更はできないため、再度AMIから起動時に選択する必要がある
  - Instance Storeのサイズは、予めEC2インスタンスによって決まっているためサイズ変更ができない
-  - 例えば、m1.largeでは、420GのEpheral Diskが２つまでと決められている
-   - 2つのディスクをストライプして840GとしてOSから1ドライブで利用する
-   
+  - 例えば、m1.largeでは、420GのEpheral Diskが２つまでと決められている
+   - 2つのディスクをストライプして840GとしてOSから1ドライブで利用する
+   - 確認方法: `curl meta-data/block-device-mappinng`
+  
+- Swap領域としての活用
+ - AWSは物理環境を意識しないため、メモリのオーバーコミットができないため、メモリ超過はスワップ領域で回避できる
+ 
+- Instance StoreのAMI化
+ - Create ImageでAMI作成時のボリュームでInstance Storeを選択することでAMIのデバイスにInstance Storeがマッピングされる
+  - EBSとは違い、データは保持されない
