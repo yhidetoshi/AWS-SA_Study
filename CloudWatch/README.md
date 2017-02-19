@@ -1,0 +1,12 @@
+# CloudWatch
+ - CloudWatch
+  - AWS上で稼働するシステム監視サービス
+   - 死活監視 / 性能監視 / キャパシティ監視
+ - CloudWatch Logs
+  - ログ管理プラットフォームサービス
+  - EC2上のOS,APPのログ
+  - AWSマネージドサービスのログ
+ - CloudWatch Event
+  - AWS上のリソースの状態監視サービス
+  - AWSリソースに対するインベントリ
+  - ガーにアクションを実行する機能
